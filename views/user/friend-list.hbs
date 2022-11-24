@@ -1,0 +1,10 @@
+<h1> {{username}}, Here are your Contacts</h1>
+
+{{#each friends}}
+
+<div class="card" style="width: 18rem;">
+    <img src="{{profileImg}}" alt="{{title}}">
+    <h1>{{username}}</h1>
+    <p>{{bio}}</p>
+
+    {{/each}}

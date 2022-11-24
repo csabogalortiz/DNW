@@ -1,0 +1,58 @@
+<div class="container">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-6">
+
+            <h1>Sign Up to Join Algo!</h1>
+            <hr>
+
+            <form action="/auth/sign-up" method="POST" enctype="multipart/form-data">
+
+                <div class="mb-3 row">
+                    <div class="col">
+                        <label for="email" class="form-label"> Email</label>
+                        <input type="email" class="form-control" id="email" name="email">
+                        <div class="form-text">Required</div>
+                    </div>
+                    <div class="col">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" name="password">
+                        <div class="form-text">Required</div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="username" name="username">
+                    <div class="form-text">Required</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="profileImg" class="form-label">Add a Prolfile Picture</label>
+                    <input type="file" class="form-control" id="profileImg" name="imageField">
+                    <div class="form-text">Paste the URL of the picture you want to use.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="description" class="form-label">Add a small Bio</label>
+                    <textarea class="form-control" id="description" rows="3" name="description"></textarea>
+                    <div class="form-text">You can change or add to this later.</div>
+
+                </div>
+
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-dark block">Sign up</button>
+                </div>
+
+                {{#if errorMessage}}
+                <div id="errorMessage">
+                    <p>{{errorMessage}}</p>
+                </div>
+                {{/if}}
+
+            </form>
+        </div>
+    </div>
+
+</div>

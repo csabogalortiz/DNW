@@ -1,0 +1,7 @@
+<h1> {{username}}, Here are your Favorite Places</h1>
+
+{{#each favPlaces}}
+<h3>{{name}}</h3>
+<h3>{{type}}</h3>
+<a href="/places/details/{{id}}" class="btn btn-dark">Details</a>
+{{/each}}

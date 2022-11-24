@@ -1,0 +1,51 @@
+<div class="container">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-6">
+            <h1>Edit Profile</h1>
+            <hr>
+
+            <form action="/user/profile/{{_id}}/edit" method="POST" enctype="multipart/form-data">
+                <div class="mb-3 row">
+                    <div class="col">
+                        <label for="email" class="form-label"> Email</label>
+                        <input type="email" class="form-control" id="email" name="email" value="{{email}}">
+                        <div class="form-text">Required</div>
+                    </div>
+                    <div class="col">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" value="{{password}}">
+                        <div class="form-text">Required</div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="username" name="username" value="{{username}}">
+                    <div class="form-text">Required</div>
+                </div>
+                <div class="mb-3">
+                    <label for="profileImg" class="form-label">Add a Prolfile Picture</label>
+                    <input type="file" class="form-control" id="profileImg" name="imageField" value="{{profileImg}}">
+                    <div class="form-text">Paste the URL of the picture you want to use.</div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Add a small Bio</label>
+                    <textarea class="form-control" rows="3" name="bio">{{bio}}</textarea>
+                    <div class="form-text">You can change or add to this later.</div>
+                </div>
+
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-dark block">Edit</button>
+                </div>
+            </form>
+
+            <form action="/user/profile/{{_id}}/delete" method="POST" style="display: inline">
+                <input type="submit" value="delete" class="btn btn-danger">
+            </form>
+
+        </div>
+
+    </div>
+
+</div>

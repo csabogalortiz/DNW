@@ -1,0 +1,17 @@
+<div class="container">
+    <h1>Nomads</h1>
+    {{#each nomads}}
+    <div class="card" style="width: 18rem;">
+        <img src="{{profileImg}}" alt="{{title}}">
+        <p>{{bio}}</p>
+        <div class="card-body">
+            <h3 class="card-title">{{username}}</h3>
+            <a href="/user/profile/{{id}}" class="btn btn-outline-success">View Profile</a>
+            <form action="/user/{{id}}/friend-list" method="POST">
+                <input type="submit" value="Add Contact" class="btn btn-info">
+            </form>
+        </div>
+    </div>
+
+    {{/each}}
+</div>

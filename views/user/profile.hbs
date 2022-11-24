@@ -1,0 +1,64 @@
+<div class="profilecat container mt-5">
+    <div class="row">
+        <div class="description col mt-5">
+            <h1 class="profileTitles"> {{nomad.username}} <span id="prueba">.</span></h1>
+            <div>
+                <p class="alignedPar">{{nomad.bio}}</p>
+            </div>
+
+            <div class="container">
+                <h4 class="text-left fs-3 fw-bold mt-5">Currently in</h2>
+                    <h4 class="text-left fs-3 fw-bold mt-5">{{country}}, {{city}}</h2>
+            </div>
+
+            <div>
+                <img src="/public/images/locationIcon_Mesa de trabajo 1.png" alt="{{title}}">
+            </div>
+        </div>
+        <div class="col d-flex justify-content-center">
+            <img class="profilePic" src="{{nomad.profileImg}}" alt="{{title}}">
+        </div>
+
+    </div>
+</div>
+
+
+<div class="container mt-5">
+    <h1 class="pplacesHeader text-center fs-12 fw-bold mt-5 mb-5"> Places.<span id="prueba">.</span>. </h1>
+</div>
+
+
+</div>
+<div class="container row align-items-center">
+
+    <div class="col ml-3">
+        <a href="/places/my-places" class="btn btn-dark">Your Places!</a>
+        <a href="/user/{{id}}/fav-places" class="btn btn-dark">Favorite Places!</a>
+        <a href="/user/{{id}}/friend-list" class="btn btn-dark">Friends</a>
+        <div>
+            {{#each nomad.favPlaces}}
+            <h1>{{name}}</h1>
+            {{/each}}
+
+        </div>
+
+        <div>
+            {{#each nomad.friends}}
+            <h1>{{username}}</h1>
+
+            {{/each}}
+
+        </div>
+
+        <div>
+            {{#each nomad.createdPlaces}}
+            <h1>{{name}}</h1>
+
+            {{/each}}
+
+        </div>
+
+
+    </div>
+
+    {{!-- /:user_id/fav-places --}}

@@ -1,0 +1,264 @@
+body {
+  padding: 0px;
+  /* font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; */
+  background: #121212;
+  font-family: 'Work Sans', sans-serif;
+  color: white;
+}
+
+.navbar {
+  font-size: 15px;
+  color: white
+}
+
+h1 {
+  color: 15px;
+}
+
+#exploreMap {
+  height: 600px;
+  background-color: red;
+  margin-top: 40px;
+}
+
+
+/* Initial Form */
+.initialForm {
+  padding: 150px;
+  padding-bottom: 250px;
+  background-color: black;
+}
+
+.initialFont {
+  width: 387.49px;
+  height: 129.9px;
+  left: 128px;
+  top: 292px;
+
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 550;
+  font-size: 40px;
+  line-height: 83px;
+}
+
+/* Map Window */
+
+.MapHeader {
+  margin-top: 14%;
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 70.4523px;
+  line-height: 83px;
+  text-align: end;
+  color: #FFFFFF;
+
+}
+
+.placesHeader {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 65px;
+  line-height: 83px;
+
+  color: #FFFFFF;
+
+}
+
+
+.MapSubtitles {
+  text-align: end;
+  font-size: 20px;
+  kerning: 20;
+}
+
+.MapPar {
+  padding-right: 80px;
+  margin-top: 20%;
+  margin-left: 5%;
+}
+
+.btn {
+  background-color: #9350FF;
+  border-radius: 40px;
+  color: white;
+  padding: 15px;
+  padding-right: 50px;
+  padding-left: 50px;
+  margin: 20px;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  font-size: large;
+  font-weight: 600;
+  border: 0;
+
+}
+
+#prueba {
+  color: #9350FF
+}
+
+/* Gallery  */
+
+
+#container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 2em auto;
+}
+
+.cols {
+  -moz-column-count: 3;
+  -moz-column-gap: 3%;
+  -moz-column-width: 20%;
+  -webkit-column-count: 3;
+  -webkit-column-gap: 3%;
+  -webkit-column-width: 80%;
+  column-count: 4;
+
+  column-gap: 3%;
+  column-width: 40%;
+}
+
+.box {
+  margin-bottom: 20px;
+  height: 400px;
+  /* opacity: 0, 5; */
+  /* filter: grayscale(50%); */
+  /* background: #BFBFBF; */
+  background-color: #f43737;
+  border-radius: 20px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 20px;
+  padding-right: 10px;
+  text-shadow: 10px 10px 50px #000000, 3px 3px 10px #232323;
+  filter: grayscale(100%);
+}
+
+.box:hover {
+  filter: grayscale(0%);
+
+  opacity: 1.0;
+}
+
+.title {
+  font-family: 'Work Sans';
+  font-weight: 750;
+  color: #fafafa;
+  margin-top: 20px;
+
+}
+
+/* Profile */
+
+.profilePic {
+
+  border-radius: 40px;
+  width: 70%;
+  margin-right: 20px;
+}
+
+.profileTitles {
+
+  width: 387.49px;
+  height: 129.9px;
+  left: 128px;
+  top: 292px;
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 70.4523px;
+  line-height: 83px;
+}
+
+.placeImg {
+  width: 50%;
+}
+
+.alignedPar {
+  color: #ffffff;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.description {
+  padding: 20px;
+}
+
+.pplacesHeader {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 65px;
+  line-height: 83px;
+
+  color: #FFFFFF;
+
+}
+
+
+/* #initialForm {
+
+  padding: 20%;
+} */
+
+.initialForm {
+  padding: 150px;
+  padding-bottom: 250px;
+  background-color: black;
+}
+
+
+
+.welcomeMessage {
+  padding-left: 90px;
+}
+
+/* === removing default button style ===*/
+.button {
+  margin-left: 20px;
+  margin: 0;
+  height: auto;
+  background: transparent;
+  padding: 0;
+  border: none;
+}
+
+/* button styling */
+.button {
+  --border-right: 6px;
+  --text-stroke-color: rgba(255, 255, 255, 0.6);
+  --animation-color: #37FF8B;
+  --fs-size: 2em;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-size: var(--fs-size);
+  font-family: "Arial";
+  position: relative;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text-stroke-color);
+}
+
+/* this is the text, when you hover on button */
+.hover-text {
+  position: absolute;
+  box-sizing: border-box;
+  content: attr(data-text);
+  color: var(--animation-color);
+  width: 0%;
+  inset: 0;
+  border-right: var(--border-right) solid var(--animation-color);
+  overflow: hidden;
+  transition: 0.5s;
+  -webkit-text-stroke: 1px var(--animation-color);
+}
+
+/* hover */
+.button:hover .hover-text {
+  width: 100%;
+  filter: drop-shadow(0 0 23px var(--animation-color))
+}
