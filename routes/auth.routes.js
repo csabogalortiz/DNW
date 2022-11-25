@@ -6,10 +6,8 @@ const saltRounds = 10
 const bcryptjs = require('bcryptjs')
 const { isLoggedOut } = require('./../middleware/route-guard');
 
-// Signup
-
 router.get("/sign-up", isLoggedOut, (req, res, next) => {
-    // res.send("Sign up here")
+
     res.render('auth/sign-up')
 
 })
@@ -26,10 +24,7 @@ router.post("/sign-up", isLoggedOut, uploader.single("imageField"), (req, res, n
 
 })
 
-// Login 
-
 router.get("/log-in", isLoggedOut, (req, res, next) => {
-    // res.send("Log in here")
     res.render('auth/log-in')
 
 })
@@ -56,7 +51,6 @@ router.post("/log-in", isLoggedOut, (req, res, next) => {
         .catch(error => { next(error) })
 })
 
-// Logout
 router.get('/log-out', (req, res, next) => {
     req.session.destroy(() => res.redirect('/'))
 })

@@ -1,17 +1,51 @@
 <div class="container">
-    <h1>Nomads</h1>
-    {{#each nomads}}
-    <div class="card" style="width: 18rem;">
-        <img src="{{profileImg}}" alt="{{title}}">
-        <p>{{bio}}</p>
-        <div class="card-body">
-            <h3 class="card-title">{{username}}</h3>
-            <a href="/user/profile/{{id}}" class="btn btn-outline-success">View Profile</a>
-            <form action="/user/{{id}}/friend-list" method="POST">
-                <input type="submit" value="Add Contact" class="btn btn-info">
-            </form>
+    <h1 class='MapHeader text-center mb-5 fw-bold mt-5'>The Nomad Community <span id="prueba">.</span></h1>
+</div>
+
+
+<section class="container mt-5 mb-5">
+    <div class="size">
+        <div class="row row-cols-3 row-cols-md-2 g-4">
+            {{#each nomads}}
+            <div class="col mt-5">
+                <div class="card">
+                    <img src="{{profileImg}}" class="card-img-top" alt="Hollywood Sign on The Hill" />
+                    <div class="card-body">
+                        <h1 class=" fw-bold card-title">{{username}}</h1>
+                        <p class="card-text">
+                            {{bio}}
+                        </p>
+                        <a href="/user/profile/{{id}}" class="btn btn-outline-success">View Profile</a>
+                        <form action="/user/{{id}}/friend-list" method="POST">
+                            <input type="submit" value="Add Contact" class="btn btn-info">
+                    </div>
+                </div>
+            </div>
+            {{/each}}
         </div>
     </div>
+</section>
 
-    {{/each}}
+
+
+{{!-- <div class="container ml-3 mt-5 ">
+    <div class="row">
+        {{#each nomads}}
+        <div class="card mt-5" style="width:20rem;">
+            <img src="{{profileImg}}" alt="{{title}}">
+            <p>{{bio}}</p>
+            <div class="card-body">
+                <h3 class="card-title">{{username}}</h3>
+                <a href="/user/profile/{{id}}" class="btn btn-outline-success">View Profile</a>
+                <form action="/user/{{id}}/friend-list" method="POST">
+                    <input type="submit" value="Add Contact" class="btn btn-info">
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
+</div>
+
+{{/each}}
+</div>
+</div> --}}

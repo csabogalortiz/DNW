@@ -1,5 +1,5 @@
 const session = require('express-session')
-const MongoStore = require('connect-mongo')  // instalar
+const MongoStore = require('connect-mongo')
 const mongoose = require('mongoose')
 
 module.exports = app => {
@@ -23,10 +23,3 @@ module.exports = app => {
     );
 };
 
-
-// app.use(session({ secret: 'ssshhhhh' }));
-// app.use(session({
-//     secret: "amar",
-//     saveUninitialized: true,
-//     resave: true
-// }));

@@ -7,14 +7,11 @@ const Place = require('../models/Place.model')
 
 const User = require('../models/User.model')
 
-// Place list - Toca hacerlo diferente por el tema de la api 
-
 router.get('/list', (req, res, next) => {
-    // res.send("Place List goes here")
 
     Place
         .find()
-        // .select({ name: 1 })
+        .select({ name: 1 })
         .then(places => {
             res.render("places/list", {
                 places,
@@ -24,25 +21,22 @@ router.get('/list', (req, res, next) => {
         .catch(error => { next(error) })
 })
 
-router.get('/details/:id', (req, res, next) => {
+// router.get('/details/:id', (req, res, next) => {
 
-    const { id: place_id } = req.params
+//     const { id: place_id } = req.params
 
-    Place
-        .findById(place_id)
-        .then(place => {
-            res.render('places/details', place)
-        })
-        .catch(error => { next(error) })
-})
+//     Place
+//         .findById(place_id)
+//         .then(place => {
+//             res.render('places/details', place)
+//         })
+//         .catch(error => { next(error) })
+// })
 
-
-// Create Place - Form -  (render)  
 router.get('/create', (req, res, next) => {
     res.render('places/create')
 })
 
-// Create Place - Form -  (hanlde)  
 router.post('/create', uploader.single('imageField'), (req, res, next) => {
 
     const { name, type, latitude, longitude } = req.body
@@ -69,11 +63,8 @@ router.post('/create', uploader.single('imageField'), (req, res, next) => {
         .catch(error => { next(error) })
 })
 
-
-// Edit Place - Form - (render)
-
 router.get("/edit/:id", (req, res, next) => {
-    // res.send("edit your place here")
+
     const { id: place_id } = req.params
 
     Place
@@ -84,7 +75,6 @@ router.get("/edit/:id", (req, res, next) => {
         .catch(error => { next(error) })
 })
 
-// Edit Place - Form - (handle)
 
 router.post("/edit/:id", uploader.single('imageField'), (req, res, next) => {
 
@@ -105,8 +95,11 @@ router.get('/details/:id', (req, res, next) => {
 
     const { id: place_id } = req.params
 
+    console.log('estamos')
+
     Place
         .findById(place_id)
+        .populate('owner')
         .populate({
             path: 'comment',
             model: "Comment",
@@ -114,12 +107,13 @@ router.get('/details/:id', (req, res, next) => {
                 path: 'owner',
                 model: "User"
             },
-            path: 'location',
-            model: 'Place',
+            // path: 'location',
+            // model: 'Place',
 
         })
 
         .then(place => {
+            console.log('------', place)
             res.render('places/details', place)
         })
         .catch(err => console.log(err))

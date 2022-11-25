@@ -4,8 +4,6 @@ const User = require('../models/User.model')
 const uploader = require('./../config/uploader.config')
 const { isLoggedIn } = require('./../middleware/route-guard')
 
-
-//Nomads List
 router.get('/users-list', (req, res, next) => {
 
     User
@@ -16,7 +14,6 @@ router.get('/users-list', (req, res, next) => {
         .catch(error => { next(error) })
 })
 
-//Nomad Profile
 router.get('/profile/:user_id', (req, res, next) => {
 
     const { user_id } = req.params
@@ -40,9 +37,28 @@ router.get('/profile/:user_id', (req, res, next) => {
         .catch(error => { next(error) })
 })
 
+router.get('/profile-copy/:user_id', (req, res, next) => {
+
+    const { user_id } = req.params
 
 
-// Edit Nomad (render)
+    User
+        .findById(user_id)
+        .populate({
+            path: "favPlaces friends createdPlaces"
+        })
+        .then(nomad => {
+            res.render('user/profile-copy', {
+                nomad,
+                isADMIN: req.session.currentUser.role === 'ADMIN',
+                isNOMAD: req.session.currentUser.role === 'NOMAD'
+
+            })
+            console.log({ nomad })
+        })
+        .catch(error => { next(error) })
+})
+
 router.get('/profile/:user_id/edit', (req, res, next) => {
 
     const { user_id } = req.params
@@ -55,7 +71,6 @@ router.get('/profile/:user_id/edit', (req, res, next) => {
         .catch(error => { next(error) })
 })
 
-// Edit Nomad (handle)
 router.post('/profile/:user_id/edit', uploader.single('imageField'), (req, res, next) => {
 
     const { name, username, email, bio, links, savedPlaces } = req.body

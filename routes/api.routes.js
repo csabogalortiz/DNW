@@ -15,5 +15,4 @@ router.get('/places', (req, res, next) => {
         .catch(error => { next(error) })
 })
 
-
 module.exports = router

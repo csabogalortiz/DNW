@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Place = require('./../models/Place.model');
 const User = require('../models/User.model')
-//  Map
+
 router.get('/places', (req, res, next) => {
     const currentUserId = req.session.currentUser._id
     User.findById(currentUserId).then(userData => {

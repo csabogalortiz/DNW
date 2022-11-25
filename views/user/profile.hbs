@@ -6,20 +6,19 @@
                 <p class="alignedPar">{{nomad.bio}}</p>
             </div>
 
-            <div class="container">
-                <h4 class="text-left fs-3 fw-bold mt-5">Currently in</h2>
-            </div>
+            <form action="/user/{{id}}/friend-list" method="POST">
+                <input type="submit" value="Add Contact" class="btn btn-info">
 
-            <div class="container">
-                <div class="row">
+                <div class="container">
+                    <div class="row">
 
-                    <img class="icon"
-                        src="https://res.cloudinary.com/dn3hqbxwn/image/upload/v1669317062/locationIcon_Mesa_de_trabajo_1_zwndcj.png"
-                        alt="{{title}}">
-                    <h4 class="text-left fs-3 fw-bold mt-5">{{country}},{{city}}</h2>
+                        {{!-- <img class="icon"
+                            src="https://res.cloudinary.com/dn3hqbxwn/image/upload/v1669317062/locationIcon_Mesa_de_trabajo_1_zwndcj.png"
+                            alt="{{title}}"> --}}
+                        <h4 class="text-left fs-3 fw-bold mt-5">{{nomad.country}}{{nomad.city}}</h2>
+                    </div>
+
                 </div>
-
-            </div>
         </div>
         <div class="col d-flex justify-content-center">
             <img class="profilePic" src="{{nomad.profileImg}}" alt="{{title}}">
@@ -58,7 +57,7 @@
             <div class="row">
                 <div class="col">
                     <h4 class="profileText1 text-left fs-1 fw-bold mt-5"><a
-                            href="/user/profile-copy/{{nomad._id}}">Created</a></h2>
+                            href="/user/profile-copy/{{nomad._id}}">Created</a></h4>
                 </div>
                 <div class="col">
                     <h4 class="profileText2 text-left fs-1 fw-bold mt-5">Saved</h2>
@@ -70,38 +69,27 @@
     <div>
 
 
-
-
-
-
-
-
-
-
     </div>
-    <div class="container row align-items-center">
+    <div class="container mt-5 row align-items-center">
+        <div class="mt-5 imageCarrousel">
+            {{#each nomad.favPlaces}}
+            <h1 class='text-left fs-3 fw-bold mt-5'>{{name}}</h1>
 
-        {{#each nomad.favPlaces}}
-        <h1>{{name}}</h1>
-        {{/each}}
-
+            <img class="profilePlacePic" src="{{placeImg}}" alt="{{title}}">
+            <h4 class="buttonText text-left fs-1 fw-bold mt-5"><a href=" /places/details/{{_id}}">Details</a>
+            </h4>
+            {{/each}}
+        </div>
     </div>
-
 
     <div>
-        {{#each nomad.createdPlaces}}
-        <h1>{{name}}</h1>
 
-        {{/each}}
 
     </div>
-
 
 </div>
 
 <div class="col ml-3">
-    <a href="/user/{{id}}/fav-places" class="btn btn-dark">Favorite Places!</a>
+
     <a href="/user/profile/{{id}}/edit" class="btn btn-dark">Edit Profile</a>
 </div>
-
-{{!-- /:user_id/fav-places --}}
