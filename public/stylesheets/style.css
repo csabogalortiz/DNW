@@ -6,6 +6,30 @@ body {
   color: white;
 }
 
+.love {
+  color: #f43737
+}
+
+.cardTitle {
+  color: #9350FF;
+  font-weight: 700;
+}
+
+.cardTitle2 {
+  color: #1d1d1d;
+  font-weight: 700;
+}
+
+.cardDesc {
+  color: #5a5a5a;
+  font-weight: 400;
+}
+
+.fs1 {
+  font-size: 20px;
+  color: #9350FF;
+}
+
 .navbar {
   font-size: 15px;
   color: white
@@ -41,6 +65,32 @@ h1 {
   font-size: 40px;
   line-height: 83px;
 }
+
+
+/* Places */
+
+.placeHeader {
+  margin-top: 14%;
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 85px;
+  line-height: 83px;
+  text-align: start;
+  color: #FFFFFF;
+
+}
+
+.detailsPar {
+  padding-right: 80px;
+  margin-left: 5%;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: 'Work Sans';
+}
+
+
+
 
 /* Map Window */
 
@@ -107,6 +157,7 @@ h1 {
   width: 100%;
   max-width: 1000px;
   margin: 2em auto;
+
 }
 
 .cols {
@@ -114,7 +165,7 @@ h1 {
   -moz-column-gap: 3%;
   -moz-column-width: 20%;
   -webkit-column-count: 3;
-  -webkit-column-gap: 3%;
+  -webkit-column-gap: 4%;
   -webkit-column-width: 80%;
   column-count: 4;
 
@@ -154,11 +205,39 @@ h1 {
 
 /* Profile */
 
+.imageCarrousel {
+  display: flex;
+  flex-direction: row;
+}
+
+.friendPic {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+
+
+}
+
+.profileText1 {
+  color: white;
+  text-align: end;
+}
+
+.profileText2 {
+  color: #9350FF;
+}
+
+
+
 .profilePic {
 
   border-radius: 40px;
   width: 70%;
   margin-right: 20px;
+}
+
+.icon {
+  max-width: 15%;
 }
 
 .profileTitles {
@@ -175,7 +254,18 @@ h1 {
 }
 
 .placeImg {
-  width: 50%;
+  width: 10%;
+  margin-top: 20px;
+}
+
+.placeDetailsImg {
+  width: 70%;
+}
+
+.formComment {
+
+  max-width: 5000px;
+  height: 300px;
 }
 
 .alignedPar {
@@ -198,6 +288,26 @@ h1 {
   color: #FFFFFF;
 
 }
+
+
+
+.MapHeader {
+  margin-top: 14%;
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 70.4523px;
+  line-height: 83px;
+  text-align: end;
+  color: #FFFFFF;
+
+}
+
+
+
+
+
+
 
 
 /* #initialForm {

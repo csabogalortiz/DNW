@@ -13,10 +13,17 @@ const placeSchema = new Schema({
     enum: ['focus', 'networking', 'chill']
   },
 
-
-  decription: {
+  country: {
     type: String,
-    default: "Default Description"
+  },
+
+  city: {
+    type: String,
+  },
+
+
+  description: {
+    type: String,
   },
 
   location: {

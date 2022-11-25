@@ -113,7 +113,10 @@ router.get('/details/:id', (req, res, next) => {
             populate: {
                 path: 'owner',
                 model: "User"
-            }
+            },
+            path: 'location',
+            model: 'Place',
+
         })
 
         .then(place => {

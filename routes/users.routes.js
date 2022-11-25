@@ -25,7 +25,9 @@ router.get('/profile/:user_id', (req, res, next) => {
 
     User
         .findById(user_id)
-        .populate('favPlaces friends createdPlaces')
+        .populate({
+            path: "favPlaces friends createdPlaces"
+        })
         .then(nomad => {
             res.render('user/profile', {
                 nomad,
@@ -58,7 +60,7 @@ router.post('/profile/:user_id/edit', uploader.single('imageField'), (req, res, 
 
     const { name, username, email, bio, links, savedPlaces } = req.body
     const { user_id } = req.params
-    const { path: profileImg } = req.file
+
 
     User
         .findByIdAndUpdate(user_id, { name, username, email, profileImg, bio, links, savedPlaces })

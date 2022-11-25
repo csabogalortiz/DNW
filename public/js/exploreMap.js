@@ -30,7 +30,7 @@ function setMarkers(places) {
                 map: exploreMap,
                 position: { lat, lng },
                 title: elm.name,
-                decription: elm.decription,
+                description: elm.description,
                 type: elm.type,
                 image: elm.placeImg,
                 icon: {
@@ -46,8 +46,8 @@ function setMarkers(places) {
 
             infowindow = new google.maps.InfoWindow({
                 content:
-                    '<div id="infoBack">' + `<img width='20%' src="${elm.image}" > `
-                    + `<h1> ${elm.title}</h1>` + `<h5> Perfect for ${elm.type}</h5>` + `<p> About: ${elm.decription}</p>`
+                    // '<div id="infoBack">' + `<img width='30%' src="${elm.image}" > `
+                    `<img width='30%' src="${elm.image}" > ` + `<h1 class='cardTitle'>${elm.title}</h1>` + `<h5 class='cardTitle2'> Perfect to ${elm.type}</h5>` + `<p class='cardDesc'> About: ${elm.description}</p>`
             })
 
             infowindow.open({

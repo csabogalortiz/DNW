@@ -1,53 +1,40 @@
-{{!-- <div class="container"> --}}
+<div class="Container">
+
     <div class="row align-items-center">
+
         <div class="welcomeMessage col align-items-center">
-            {{!-- <h1>{{appTitle}}</h1> --}}
+
             <h1 class=" initialFont">Welcome To The Digital Nomad World !!</h1>
         </div>
 
-
         <div class="initialForm col bg-black mt-6">
+            <h1 class="text-white align-items-center">DNW </h1>
 
-            <form>
-
-                <h1 class="text-white align-items-center">DNW </h1>
-                <!-- Email input -->
-                <div class="form-outline mt-4 mb-8">
-                    <label class="form-label" for="form2Example1">Email address</label>
-                    <input type="email" id="form2Example1" class="form-control" />
+            <form action="/auth/log-in" method="POST">
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email">
                 </div>
 
-                <!-- Password input -->
-                <div class="form-outline mt-4 mb-4">
-                    <label class="form-label" for="form2Example2">Password</label>
-                    <input type="password" id="form2Example2" class="form-control" />
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" name="password">
                 </div>
 
-                <!-- 2 column grid layout for inline styling -->
-                <div class="row mb-4">
-                    <div class="col d-flex justify-content-center">
-
-                    </div>
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-dark block">Log-In</button>
                 </div>
 
-                <!-- Submit button -->
-
-                {{!-- <a href="/auth/log-in" class="btn  btn-light btn-lg">Log in</a> --}}
-                <a href="/auth/log-in" data-text="Awesome" class="button">
-                    <span class="actual-text">&nbsp;LogIn&nbsp;</span>
-                    <span class="hover-text" aria-hidden="true">&nbsp;LogIn&nbsp;</span>
-                </a>
-
-
-                {{!-- <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button> --}}
-
-                <!-- Register buttons -->
+                {{#if errorMessage}}
+                <div id="errorMessage">
+                    <p>{{errorMessage}}</p>
+                </div>
+                {{/if}}
                 <div class="text-white text-center">
-                    <p>Not a member? <a href="/auth/sign-up" ">Register</a></p>
-
+                    <p>Not a member? <a href="/auth/sign-up">Register</a></p>
                 </div>
             </form>
-                </div>
         </div>
 
     </div>
+</div>
