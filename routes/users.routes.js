@@ -18,8 +18,6 @@ router.get('/profile/:user_id', (req, res, next) => {
 
     const { user_id } = req.params
 
-
-
     User
         .findById(user_id)
         .populate({
@@ -76,14 +74,12 @@ router.post('/profile/:user_id/edit', uploader.single('imageField'), (req, res, 
     const { name, username, email, bio, links, savedPlaces } = req.body
     const { user_id } = req.params
 
-
     User
         .findByIdAndUpdate(user_id, { name, username, email, profileImg, bio, links, savedPlaces })
         .then(() => res.redirect(`/user/profile/${user_id}`))
         .catch(error => { next(error) })
 })
 
-//Delete Nomad (handle)
 router.post('/profile/:user_id/delete', (req, res, next) => {
 
     const { user_id } = req.params
@@ -94,7 +90,6 @@ router.post('/profile/:user_id/delete', (req, res, next) => {
         .catch(error => { next(error) })
 })
 
-// Fav Places
 router.get('/:user_id/fav-places', (req, res, next) => {
 
     const { user_id } = req.params
@@ -120,11 +115,11 @@ router.post('/:user_id/fav-places/:place_id', (req, res, next) => {
     User
         .findByIdAndUpdate(user_id, { "$addToSet": { "favPlaces": place_id } })
         .then(() => res.redirect('/explore/places'))
+        .catch(error => { next(error) })
 })
 
-// Friend List 
+
 router.get('/:user_id/friend-list', (req, res, next) => {
-    // res.send('Friend List Goes Here')
 
     const { user_id } = req.params
 
@@ -134,7 +129,7 @@ router.get('/:user_id/friend-list', (req, res, next) => {
         .then(nomad => {
             res.render('user/friend-list', nomad)
         })
-        .catch(err => console.log(err))
+        .catch(error => { next(error) })
 
 })
 
@@ -146,8 +141,7 @@ router.post('/:user_id/friend-list', (req, res, next) => {
     User
         .findByIdAndUpdate(_id, { "$addToSet": { "friends": user_id } })
         .then(() => res.redirect('/user/users-list'))
+        .catch(error => { next(error) })
 })
-
-
 
 module.exports = router

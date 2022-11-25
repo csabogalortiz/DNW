@@ -73,10 +73,15 @@
     <div class="container mt-5 row align-items-center">
         <div class="mt-5 imageCarrousel">
             {{#each nomad.favPlaces}}
-            <h1 class='text-left fs-3 fw-bold mt-5'>{{name}}</h1>
 
-            <img class="profilePlacePic" src="{{placeImg}}" alt="{{title}}">
-            <h4 class="buttonText text-left fs-1 fw-bold mt-5"><a href=" /places/details/{{_id}}">Details</a>
+
+            <div class="col">
+                <img class="profilePlacePic" src="{{placeImg}}" alt="{{title}}">
+                <h1 class='text-left fs-3 fw-bold mt-5'>{{name}}</h1>
+                <h4 class="buttonText text-left fs-5 fw-bold mt-5"><a href=" /places/details/{{_id}}">Details</a>
+            </div>
+
+
             </h4>
             {{/each}}
         </div>
